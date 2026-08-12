@@ -6,7 +6,7 @@ class Aluno:
     notas:list
     def calcular(self):
         return sum(self.notas) / len(self.notas)
-\
+
 
 if __name__ == "__main__":
     aluno1=Aluno("Kauã",20,[8,7,9,8])
