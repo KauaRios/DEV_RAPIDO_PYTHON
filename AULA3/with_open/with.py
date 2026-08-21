@@ -14,7 +14,7 @@ def exemplo3(caminho):
 
   
 if __name__ =="__main__":
-    caminho='/Users/aluno/Downloads/python/aula2/with_open/dados.txt'
+    caminho='/Users/aluno/Downloads/python/aula2/with_open/dados.txt
    
     exemplo3(caminho)
 
