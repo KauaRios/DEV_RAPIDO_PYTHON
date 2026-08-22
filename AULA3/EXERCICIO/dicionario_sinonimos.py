@@ -5,8 +5,8 @@ def sinonimos(dicio):
 
 def adicionar_palavras(result):
 
-    palavra = input("Digite uma nova palavra: ").strip().lower()
-    sinonimo_dela = input("Digite seu sinonimo: ").strip().lower()
+    palavra = input(str("Digite uma nova palavra: ")).strip().lower()
+    sinonimo_dela = input(str("Digite seu sinonimo: ")).strip().lower()
 
     if result.get(palavra):
         print("Ja existe essa palavra")
