@@ -37,7 +37,7 @@ class ImportadorPedidos:
         self.arquivo3 = base_dir / "erros.log"
         self.arquivo4 = (
             base_dir / "resumo.txt"
-        )  # Gera um resumo com quantidades de registros válidos, inválidos e valor total.
+        )  
         self.processar_pedidos()
     def salvar_log(self,dados):
                 with open(self.arquivo3, "a", encoding="utf-8") as arquivo:
