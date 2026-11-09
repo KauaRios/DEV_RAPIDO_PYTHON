@@ -12,6 +12,8 @@ class InterfaceApp:
         self.raiz=raiz
         self.raiz.title("Cadastro")
         self.raiz.geometry("500x400")
+        self.criar_treeview()
+        self.carregar_usuarios()
         
 
         self.rotulo=ttk.Label(raiz,text="Nome").grid(row=0, column=0, sticky="e", padx=5, pady=10) 
@@ -46,6 +48,8 @@ class InterfaceApp:
                          pady=30)
 
 
+        
+
     def adicionar(self):
         nome=self.nome.get()
         idade=self.idade.get()
@@ -56,6 +60,7 @@ class InterfaceApp:
             return
         self.controller.adicionar(nome,idade,telefone)
         messagebox.showinfo(title="concluido",message="Usuario adicionado com sucesso")
+        self.carregar_usuarios()
     def remover(self):
         nome=self.nome.get()
         idade=self.idade.get()
@@ -71,6 +76,31 @@ class InterfaceApp:
         else:
             messagebox.showwarning("Erro","Nenhum usuario com corresponde aos dados informados")
 
+        self.carregar_usuarios()
+
+    def criar_treeview(self):
+        self.tabela=ttk.Treeview(self.raiz,columns=("nome","idade","telefone"),
+                                 show="headings"
+
+                                 )
+
+        self.tabela.heading("nome",text="Nome")
+        self.tabela.heading("idade",text="Idade")
+        self.tabela.heading("telefone",text="Telefone")
+
+
+        self.tabela.grid(row=4,column=0,columnspan=2,padx=10,pady=10)
+
+    def carregar_usuarios(self):
+        self.tabela.delete(*self.tabela.get_children())
+        users=self.controller.listar()
+        for usuario in users:
+            self.tabela.insert("","end",values=usuario)
+            
+   
+
+  
+
 class InterfaceController:
     def __init__(self):
         self.banco=Banco()
@@ -81,6 +111,8 @@ class InterfaceController:
 
     def remover(self,nome,idade,telefone):
         return self.banco.remover(nome, idade, telefone)
+    def listar(self):
+        return self.banco.listar()
 if __name__=="__main__":
     controller=InterfaceController()
     raiz=tk.Tk()

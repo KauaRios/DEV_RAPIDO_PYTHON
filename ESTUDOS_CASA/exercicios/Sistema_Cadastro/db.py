@@ -37,6 +37,10 @@ class Banco:
         removidos=self.cursor.rowcount
         return removidos
 
+    def listar(self):
+        self.cursor.execute("SELECT * FROM usuarios")
+        return self.cursor.fetchall()
+
     
 
 
