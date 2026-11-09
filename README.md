@@ -6,6 +6,7 @@ Repositório de exemplos e exercícios das aulas, além de estudos feitos em cas
 
 | Pasta | Conteúdo |
 | --- | --- |
+| [AULA1](AULA1/) | Aula Inicial sem conteúdos. |
 | [AULA2](AULA2/) | Classes, dataclasses e gerenciador de tarefas. |
 | [AULA3](AULA3/) | Leitura e escrita de arquivos, caminhos e exercícios. |
 | [AULA4](AULA4/) | Strings, expressões regulares e formulário. |
